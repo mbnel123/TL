@@ -1,0 +1,10 @@
+.space-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Plaats de achtergrond achter alle andere content */
+  pointer-events: none; /* Zorgt ervoor dat je door de canvas heen kunt klikken */
+  display: block; /* Zorg ervoor dat de canvas wordt weergegeven */
+}
