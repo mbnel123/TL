@@ -41,55 +41,6 @@ const level2 = {
       quiz: {
         questions: [
           {
-            id: 'q12_1',
-            question: 'During which session overlap is forex market liquidity typically highest?',
-            options: [
-              'Sydney-Tokyo',
-              'Tokyo-London',
-              'London-New York',
-              'New York-Sydney'
-            ],
-            correctAnswer: 2
-          },
-          {
-            id: 'q12_2',
-            question: 'Based on this chart showing trading activity, which market is illustrated?',
-            image: '/assets/images/quiz/24h_market_activity.jpg',
-            options: [
-              'NYSE stock market',
-              'Cryptocurrency market',
-              'Tokyo Stock Exchange',
-              'Bond market'
-            ],
-            correctAnswer: 1
-          },
-          {
-            id: 'q12_3',
-            question: 'What time does regular trading on the New York Stock Exchange (NYSE) begin?',
-            options: [
-              '8:00 AM Eastern Time',
-              '9:30 AM Eastern Time',
-              '10:00 AM Eastern Time',
-              '12:00 PM Eastern Time'
-            ],
-            correctAnswer: 1
-          },
-          {
-            id: 'q12_4',
-            question: 'Which of these markets has the MOST limited trading hours per week?',
-            options: [
-              'Forex market',
-              'Stock market',
-              'Cryptocurrency market',
-              'Options market'
-            ],
-            correctAnswer: 3
-          }
-        ]
-      },
-      quiz: {
-        questions: [
-          {
             id: 'q3_1',
             question: 'What is an IPO?',
             options: [
@@ -824,4 +775,58 @@ const level2 = {
           type: 'text',
           value: 'Commodities futures markets typically follow their respective exchange hours. For example, COMEX gold futures trade from 6:00 PM to 5:00 PM Eastern Time the next day, Sunday through Friday, with a break from 5:00 PM to 6:00 PM each day.'
         }
-      ]
+      ],
+      quiz: {
+        questions: [
+          {
+            id: 'q12_1',
+            question: 'During which session overlap is forex market liquidity typically highest?',
+            options: [
+              'Sydney-Tokyo',
+              'Tokyo-London',
+              'London-New York',
+              'New York-Sydney'
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: 'q12_2',
+            question: 'Based on this chart showing trading activity, which market is illustrated?',
+            image: '/assets/images/quiz/24h_market_activity.jpg',
+            options: [
+              'NYSE stock market',
+              'Cryptocurrency market',
+              'Tokyo Stock Exchange',
+              'Bond market'
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: 'q12_3',
+            question: 'What time does regular trading on the New York Stock Exchange (NYSE) begin?',
+            options: [
+              '8:00 AM Eastern Time',
+              '9:30 AM Eastern Time',
+              '10:00 AM Eastern Time',
+              '12:00 PM Eastern Time'
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: 'q12_4',
+            question: 'Which of these markets has the MOST limited trading hours per week?',
+            options: [
+              'Forex market',
+              'Stock market',
+              'Cryptocurrency market',
+              'Options market'
+            ],
+            correctAnswer: 1
+          }
+        ]
+      }
+    }
+  ]
+};
+
+export default level2;
