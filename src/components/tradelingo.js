@@ -57,29 +57,103 @@ const TradeMaster = () => {
     },
   };
 
+  // Planet styles voor elk level om ze uniek te maken
+  const getPlanetStyle = (levelIndex, isCompleted, isActive) => {
+    const planetColors = [
+      { primary: '#e89999', secondary: '#cc7777', ring: 'rgba(232, 153, 153, 0.4)' },
+      { primary: '#99c2e8', secondary: '#77aac2', ring: 'rgba(153, 194, 232, 0.4)' },
+      { primary: '#a8e899', secondary: '#88cc77', ring: 'rgba(168, 232, 153, 0.4)' },
+      { primary: '#e8c599', secondary: '#ccaa77', ring: 'rgba(232, 197, 153, 0.4)' },
+      { primary: '#c999e8', secondary: '#aa77cc', ring: 'rgba(201, 153, 232, 0.4)' },
+      { primary: '#99e8c5', secondary: '#77ccaa', ring: 'rgba(153, 232, 197, 0.4)' },
+      { primary: '#e8b399', secondary: '#cc9977', ring: 'rgba(232, 179, 153, 0.4)' },
+      { primary: '#b3e899', secondary: '#99cc77', ring: 'rgba(179, 232, 153, 0.4)' },
+      { primary: '#e899d1', secondary: '#cc77bb', ring: 'rgba(232, 153, 209, 0.4)' },
+      { primary: '#99d1e8', secondary: '#77bbcc', ring: 'rgba(153, 209, 232, 0.4)' },
+      { primary: '#d1e899', secondary: '#bbcc77', ring: 'rgba(209, 232, 153, 0.4)' },
+      { primary: '#e899b3', secondary: '#cc7799', ring: 'rgba(232, 153, 179, 0.4)' },
+    ];
+    
+    const colorIndex = levelIndex % planetColors.length;
+    const colors = planetColors[colorIndex];
+    
+    let opacity = 0.6;
+    let glowIntensity = 0.3;
+    
+    if (isCompleted) {
+      opacity = 1;
+      glowIntensity = 0.6;
+    } else if (isActive) {
+      opacity = 0.9;
+      glowIntensity = 0.8;
+    }
+    
+    return {
+      ...colors,
+      opacity,
+      glowIntensity,
+      hasRing: levelIndex % 3 === 0,
+    };
+  };
+
   const generateLevelNodes = (world) => {
     const levels = [];
     for (let i = 1; i <= worlds[world].levels; i++) {
       const isCompleted = i <= worlds[world].completed;
       const isActive = i === worlds[world].completed + 1;
-      const baseStyle =
-        'w-16 h-16 rounded-full flex items-center justify-center font-bold text-xl shadow-lg hover:scale-105 transition-transform cursor-pointer relative';
-      let levelStyle = '';
-      if (isCompleted) {
-        levelStyle = worlds[world].color + ' text-white';
-      } else if (isActive) {
-        levelStyle = 'bg-gray-800 border border-blue-400 text-white';
-      } else {
-        levelStyle = 'bg-gray-800 text-gray-400';
-      }
+      const planetStyle = getPlanetStyle(i - 1, isCompleted, isActive);
+      
       levels.push(
-        <div key={i} className={levelStyle + ' ' + baseStyle}>
-          {i}
-          {isCompleted && (
-            <div className="absolute -bottom-1 -right-1 bg-white rounded-full p-1">
-              <Sparkles className="h-4 w-4 text-yellow-500" />
+        <div key={i} className="relative flex flex-col items-center group">
+          <div 
+            className="relative w-8 h-8 rounded-full cursor-pointer transition-all duration-300 hover:scale-125"
+            style={{
+              background: `radial-gradient(circle at 30% 30%, ${planetStyle.primary}, ${planetStyle.secondary})`,
+              opacity: planetStyle.opacity,
+              boxShadow: `0 0 ${planetStyle.glowIntensity * 20}px ${planetStyle.ring}`,
+            }}
+          >
+            <div 
+              className="absolute inset-1 rounded-full"
+              style={{
+                background: `radial-gradient(circle at 20% 20%, rgba(255,255,255,0.3), transparent 40%)`,
+              }}
+            />
+            
+            {planetStyle.hasRing && (
+              <div 
+                className="absolute inset-0 rounded-full border-2 opacity-50"
+                style={{
+                  borderColor: planetStyle.ring,
+                  transform: 'scale(1.8)',
+                  borderStyle: 'dashed',
+                }}
+              />
+            )}
+            
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-white text-xs font-bold">
+              {i}
             </div>
-          )}
+            
+            {isCompleted && (
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full flex items-center justify-center">
+                <Check className="h-2 w-2 text-white" />
+              </div>
+            )}
+            
+            {isActive && (
+              <div 
+                className="absolute inset-0 rounded-full animate-pulse"
+                style={{
+                  boxShadow: `0 0 15px ${planetStyle.primary}`,
+                }}
+              />
+            )}
+          </div>
+          
+          <span className="mt-1 text-xs text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">
+            Level {i}
+          </span>
         </div>
       );
     }
@@ -383,7 +457,7 @@ const TradeMaster = () => {
                 <span className={'inline-block w-4 h-4 rounded-full ' + worlds[selectedWorld].color + ' mr-2'}></span>
                 {worlds[selectedWorld].name} - Learning Path
               </h2>
-              <div className="flex flex-wrap gap-6 justify-center items-center">
+              <div className="flex flex-wrap gap-4 justify-center items-center">
                 {generateLevelNodes(selectedWorld)}
               </div>
               {worlds[selectedWorld].completed < worlds[selectedWorld].levels && (
