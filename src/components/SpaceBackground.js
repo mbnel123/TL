@@ -53,9 +53,7 @@ const SpaceBackground = () => {
         }
       }
       
-      // Voeg enkele subtiele maar zichtbare nevels toe
-      drawSubtleNebula(canvas.width * 0.2, canvas.height * 0.3, 180, 'rgba(80, 100, 150, 0.08)');
-      drawSubtleNebula(canvas.width * 0.8, canvas.height * 0.7, 150, 'rgba(120, 80, 140, 0.06)');
+      // Geen nevels - houdt de achtergrond strak en helder
       
       // Teken grotere, meer zichtbare planeten
       drawProfessionalPlanet(canvas.width * 0.15, canvas.height * 0.2, 45, '#e89999', '#cc7777'); // Roze/rood
@@ -66,19 +64,6 @@ const SpaceBackground = () => {
       // Voeg subtiele ringen toe aan enkele planeten
       drawSubtlePlanetRing(canvas.width * 0.15, canvas.height * 0.2, 45, 75, 'rgba(232, 153, 153, 0.4)');
       drawSubtlePlanetRing(canvas.width * 0.75, canvas.height * 0.85, 40, 70, 'rgba(232, 197, 153, 0.35)');
-    };
-    
-    // Functie om een subtiele nevel te tekenen
-    const drawSubtleNebula = (x, y, size, color) => {
-      const gradient = ctx.createRadialGradient(x, y, 0, x, y, size);
-      gradient.addColorStop(0, color);
-      gradient.addColorStop(0.6, 'rgba(0, 0, 0, 0)');
-      gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
-      
-      ctx.fillStyle = gradient;
-      ctx.beginPath();
-      ctx.arc(x, y, size, 0, Math.PI * 2);
-      ctx.fill();
     };
     
     // Functie om een professionele, maar zichtbare planeet te tekenen
