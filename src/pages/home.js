@@ -29,12 +29,12 @@ const Home = () => {
     const fromLevel = courseStructure[from];
     const toLevel = courseStructure[to];
     
-    // Calculate the center points of each level node
-    const fromCenterX = fromLevel.position.left + 125; // Half of the width
-    const fromCenterY = fromLevel.position.top + 50;  // Half of the height
+    // AANGEPAST: Calculate the center points based on 80px level node size
+    const fromCenterX = fromLevel.position.left + 40; // Half of 80px
+    const fromCenterY = fromLevel.position.top + 40;  // Half of 80px
     
-    const toCenterX = toLevel.position.left + 125;
-    const toCenterY = toLevel.position.top + 50;
+    const toCenterX = toLevel.position.left + 40; // Half of 80px
+    const toCenterY = toLevel.position.top + 40;  // Half of 80px
     
     const pathString = `M${fromCenterX},${fromCenterY} Q${(fromCenterX + toCenterX) / 2},${(fromCenterY + toCenterY) / 2 - 50} ${toCenterX},${toCenterY}`;
     return pathString;
@@ -80,15 +80,21 @@ const Home = () => {
               onClick={() => isUnlocked && handleNavigation(levelId)}
               style={{ top: `${level.position.top}px`, left: `${level.position.left}px` }}
             >
-              <div className="level-icon">
-                <i className={`fas fa-${level.icon}`}></i>
-              </div>
-              <div className="level-info">
-                <h2>{level.title}</h2>
-                <div className="progress-bar">
-                  <div className="progress" style={{ width: `${levelProgress.percentage}%` }}></div>
+              <div className="planet-container">
+                <div className="planet">
+                  <div className="planet-progress">
+                    <span className="progress-text">{levelProgress.percentage}%</span>
+                  </div>
+                  <div className="orbiting-rocket">
+                    <div className="rocket-body">
+                      <div className="rocket-shape">
+                        <div className="rocket-window"></div>
+                      </div>
+                      <div className="rocket-flame"></div>
+                    </div>
+                  </div>
                 </div>
-                <p>{levelProgress.completed}/{levelProgress.total}</p>
+                <div className="planet-glow"></div>
               </div>
               {!isUnlocked && <div className="lock-overlay"><i className="fas fa-lock"></i></div>}
             </div>
