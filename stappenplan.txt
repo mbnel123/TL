@@ -1,16 +1,36 @@
-1. Ideen voor vraagsoorten:
+terminologie:
+    - unit 
+    - levels
+    - lessons
+
+1. Wat willen we er nog in toevoegen? 
+- Introductiepagina toevoegen: 
+    - wat is het doel? 
+    - wat kun je ermee bereiken? 
+    - wat wil je hiermee leren?
+- xp per persoon toevoegen
+- totale score over de gehele app, hoe ver opweg ben je naar het worden van een echte trader?
+- mascotte (net zoals duo de uil)
+- een raket tussen de verschillende levels?
+- net als in duolingo wil je eigenlijk een soort verticale/horizontale levels pagina waar je stap voor stap doorheen loopt als een soort pad
+
+2. Wat willen we nog aanpassen?
+- lettertype
+- logo aanpassen
+- de naam aanpassen
+- het thema, achtergrond is iets minder kinderachtig/rustiger/cleaner, misschien kiezen voor 1 planeet en dat kleurenthema
+    - misschien ook per level een andere planeet/kleurenthema hebben
+    - minder verschillende kleuren maar meer 1 kleur per level
+
+
+3. Inhoudelijke aanpassingen in de vragen:
 - aanwijzen op een chart
 - welk candlestick patroon zie je hier?
 - ik ga hier short/long
 - interactieve aspecten toevoegen, bijvoorbeeld vragen: ik ga hier long/short
 
-2. Andere verbeteringen
-- lettertype
-- verplaats een raketje over de verbindingslijn
-- laat de verschillende levels waartussen de verbindingslijnen nu lopen op een soort planeten lijken.
-- xp bijhouden, een totaalscore van de totale voortgang van de gehele app
-- Achtergrond iets minder kinderachtig
-- Verschillende levels/planeten moeten er niet allemaal hetzelfde uit zien
+4. EN daarna?
+- launchen/deployen op een website zodat het voor iedereen bereikbaar wordt
+- testers zoeken
 
-3. EN daarna?
-- launchen op een website zodat het voor iedereen bereikbaar
+
