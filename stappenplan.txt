@@ -10,7 +10,7 @@ terminologie:
     - wat wil je hiermee leren?
 - xp per persoon toevoegen
 - totale score over de gehele app, hoe ver opweg ben je naar het worden van een echte trader?
-- mascotte (net zoals duo de uil)
+- mascotte (net zoals duo de uil): maantja/raketje/lachende candlestick/
 - een raket tussen de verschillende levels?
 - net als in duolingo wil je eigenlijk een soort verticale/horizontale levels pagina waar je stap voor stap doorheen loopt als een soort pad
 
@@ -21,7 +21,8 @@ terminologie:
 - het thema, achtergrond is iets minder kinderachtig/rustiger/cleaner, misschien kiezen voor 1 planeet en dat kleurenthema
     - misschien ook per level een andere planeet/kleurenthema hebben
     - minder verschillende kleuren maar meer 1 kleur per level
-
+- de verschillende units bijvoorbeeld in de linker balk, daar dan kleine planeten icoontjes met de verschillende units
+- de planetenachtergrond weghalen en juist meer clean 1 kleur als achtergrond 
 
 3. Inhoudelijke aanpassingen in de vragen:
 - aanwijzen op een chart
