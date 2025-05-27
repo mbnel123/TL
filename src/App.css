@@ -42,22 +42,6 @@ body {
   /* Verwijderd: background: linear-gradient(125deg, #0f172a 0%, #020617 100%); */
 }
 
-/* Verwijderd: .app::before stijl die de canvas achtergrond kan overschrijven */
-/*
-.app::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(circle at 25% 25%, rgba(76, 29, 149, 0.15) 0%, transparent 40%),
-    radial-gradient(circle at 75% 75%, rgba(20, 184, 166, 0.15) 0%, transparent 40%);
-  z-index: -2;
-}
-*/
-
 /* Stars animation */
 @keyframes twinkle {
   0% { opacity: 0.3; }
@@ -200,67 +184,65 @@ header p {
   max-width: 800px;
 }
 
-/* Level nodes as planets */
+/* AANGEPAST: Level nodes nu als kleine planeten */
 .level-node {
   position: absolute;
-  width: 250px;
-  background: rgba(20, 27, 51, 0.7);
-  border-radius: 15px;
-  padding: 20px;
+  width: 50px;
+  height: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
   z-index: 2;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5), 
-              inset 0 1px 1px rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(110, 231, 183, 0.1);
-  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 
 .level-node.unlocked:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.2);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(110, 231, 183, 0.3),
-              inset 0 1px 1px rgba(255, 255, 255, 0.2);
+              0 0 25px rgba(110, 231, 183, 0.3);
 }
 
 .level-node.locked {
-  opacity: 0.7;
+  opacity: 0.4;
   filter: grayscale(70%);
   cursor: not-allowed;
 }
 
-/* Planet container styling */
+/* AANGEPAST: Planet container nu kleiner */
 .planet-container {
   position: relative;
-  width: 140px;
-  height: 140px;
-  margin-bottom: 20px;
+  width: 40px;
+  height: 40px;
+  margin: 0;
   perspective: 1000px;
 }
 
-/* Planet styling */
+/* AANGEPAST: Planet styling kleiner */
 .planet {
   width: 100%;
   height: 100%;
   border-radius: 50%;
   position: relative;
   overflow: hidden;
-  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.6),
-              0 0 35px rgba(110, 231, 183, 0.4);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.6),
+              0 0 20px rgba(110, 231, 183, 0.4);
   animation: rotate 40s linear infinite;
 }
 
-/* Different planet types based on position in list */
+/* Different planet types based on position in list - AANGEPAST kleiner */
 .level-node:nth-of-type(1) .planet {
   background: radial-gradient(circle at 30% 30%, 
     rgba(110, 231, 183, 0.9) 0%, 
     rgba(14, 116, 144, 0.7) 60%, 
     rgba(15, 23, 42, 0.9) 100%);
-  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.6),
-              0 0 35px rgba(110, 231, 183, 0.5);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.6),
+              0 0 20px rgba(110, 231, 183, 0.5);
 }
 
 .level-node:nth-of-type(2) .planet {
@@ -268,8 +250,8 @@ header p {
     rgba(167, 139, 250, 0.9) 0%, 
     rgba(124, 58, 237, 0.7) 60%, 
     rgba(15, 23, 42, 0.9) 100%);
-  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.6),
-              0 0 35px rgba(124, 58, 237, 0.5);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.6),
+              0 0 20px rgba(124, 58, 237, 0.5);
 }
 
 .level-node:nth-of-type(3) .planet {
@@ -277,8 +259,8 @@ header p {
     rgba(251, 146, 60, 0.9) 0%, 
     rgba(234, 88, 12, 0.7) 60%, 
     rgba(15, 23, 42, 0.9) 100%);
-  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.6),
-              0 0 35px rgba(234, 88, 12, 0.5);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.6),
+              0 0 20px rgba(234, 88, 12, 0.5);
 }
 
 .level-node:nth-of-type(4) .planet {
@@ -286,8 +268,8 @@ header p {
     rgba(244, 114, 182, 0.9) 0%, 
     rgba(219, 39, 119, 0.7) 60%, 
     rgba(15, 23, 42, 0.9) 100%);
-  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.6),
-              0 0 35px rgba(219, 39, 119, 0.5);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.6),
+              0 0 20px rgba(219, 39, 119, 0.5);
 }
 
 .level-node:nth-of-type(5) .planet {
@@ -295,8 +277,8 @@ header p {
     rgba(250, 204, 21, 0.9) 0%, 
     rgba(234, 179, 8, 0.7) 60%, 
     rgba(15, 23, 42, 0.9) 100%);
-  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.6),
-              0 0 35px rgba(234, 179, 8, 0.5);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.6),
+              0 0 20px rgba(234, 179, 8, 0.5);
 }
 
 @keyframes rotate {
@@ -304,14 +286,14 @@ header p {
   100% { transform: rotate(360deg); }
 }
 
-/* Planet features - craters, mountains, etc. */
+/* Planet features - craters, mountains, etc. AANGEPAST kleiner */
 .planet-feature {
   position: absolute;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Progress indicator in center of planet */
+/* AANGEPAST: Progress indicator kleiner */
 .planet-progress {
   position: absolute;
   top: 50%;
@@ -324,43 +306,43 @@ header p {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 15px rgba(110, 231, 183, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 8px rgba(110, 231, 183, 0.5);
   z-index: 10;
-  animation: none !important; /* Prevent rotation */
+  animation: none !important;
 }
 
 .progress-text {
-  font-size: 1.4rem;
+  font-size: 0.6rem;
   font-weight: bold;
   color: white;
-  text-shadow: 0 0 10px rgba(110, 231, 183, 0.8);
+  text-shadow: 0 0 5px rgba(110, 231, 183, 0.8);
   animation: none !important;
   transform: none !important;
 }
 
 .planet-glow {
   position: absolute;
-  top: -15px;
-  left: -15px;
-  right: -15px;
-  bottom: -15px;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
   border-radius: 50%;
   background: transparent;
-  box-shadow: 0 0 50px rgba(110, 231, 183, 0.3);
+  box-shadow: 0 0 25px rgba(110, 231, 183, 0.3);
   z-index: -1;
 }
 
-/* Orbiting rocket animation */
+/* AANGEPAST: Orbiting rocket kleiner */
 @keyframes orbit {
-  0% { transform: rotate(0deg) translateX(90px) rotate(0deg); }
-  100% { transform: rotate(360deg) translateX(90px) rotate(-360deg); }
+  0% { transform: rotate(0deg) translateX(35px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(35px) rotate(-360deg); }
 }
 
 .orbiting-rocket {
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
   top: 50%;
   left: 50%;
   z-index: 11;
@@ -377,32 +359,32 @@ header p {
 
 .rocket-shape {
   position: absolute;
-  width: 30px;
-  height: 40px;
+  width: 15px;
+  height: 20px;
   background-color: #6ee7b7;
   clip-path: polygon(50% 0%, 100% 70%, 80% 100%, 20% 100%, 0% 70%);
-  filter: drop-shadow(0 0 8px rgba(110, 231, 183, 0.8));
+  filter: drop-shadow(0 0 4px rgba(110, 231, 183, 0.8));
 }
 
 .rocket-window {
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.8);
-  top: 15px;
-  left: 10px;
+  top: 8px;
+  left: 5px;
 }
 
 .rocket-flame {
   position: absolute;
-  bottom: -15px;
-  left: 7px;
-  width: 16px;
-  height: 20px;
+  bottom: -8px;
+  left: 3px;
+  width: 8px;
+  height: 10px;
   clip-path: polygon(20% 0%, 80% 0%, 100% 40%, 50% 100%, 0% 40%);
   background: linear-gradient(to bottom, #f59e0b, #ef4444);
-  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.7));
+  filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.7));
   animation: flicker 0.1s infinite alternate;
 }
 
@@ -414,6 +396,7 @@ header p {
 .level-info {
   flex: 1;
   text-align: center;
+  display: none; /* AANGEPAST: Verberg tekst info bij kleine planeten */
 }
 
 .level-info h2 {
@@ -449,7 +432,7 @@ header p {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 15px;
+  border-radius: 50%; /* AANGEPAST: rond voor planeten */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -457,7 +440,7 @@ header p {
 }
 
 .lock-overlay i {
-  font-size: 35px;
+  font-size: 20px; /* AANGEPAST: kleiner slot icoon */
   color: var(--locked-color);
 }
 
@@ -704,8 +687,8 @@ header p {
   }
   
   .level-node {
-    width: 80%;
-    left: 10% !important;
+    width: 40px !important;
+    height: 40px !important;
   }
   
   .level-page header h1 {
