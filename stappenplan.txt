@@ -13,4 +13,4 @@
 - Verschillende levels/planeten moeten er niet allemaal hetzelfde uit zien
 
 3. EN daarna?
-- launchen op een website
+- launchen op een website zodat het voor iedereen bereikbaar
