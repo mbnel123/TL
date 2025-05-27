@@ -1,1 +1,16 @@
-1.
+1. Ideen voor vraagsoorten:
+- aanwijzen op een chart
+- welk candlestick patroon zie je hier?
+- ik ga hier short/long
+- interactieve aspecten toevoegen, bijvoorbeeld vragen: ik ga hier long/short
+
+2. Andere verbeteringen
+- lettertype
+- verplaats een raketje over de verbindingslijn
+- laat de verschillende levels waartussen de verbindingslijnen nu lopen op een soort planeten lijken.
+- xp bijhouden, een totaalscore van de totale voortgang van de gehele app
+- Achtergrond iets minder kinderachtig
+- Verschillende levels/planeten moeten er niet allemaal hetzelfde uit zien
+
+3. EN daarna?
+- launchen op een website zodat het voor iedereen bereikbaar
